@@ -8,13 +8,20 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding-left: 20px;
 }
-.main div{
-  height: 50px;
-  border-bottom: 1px solid rgb(226, 221, 221);
-  display: flex;
-  align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:rgb(94, 93, 93);
+.main {
+  div{
+    height: 50px;
+    border-bottom: 1px solid rgb(226, 221, 221);
+    display: flex;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:rgb(94, 93, 93);
+    margin-left: 20px;
+  }
+  img{
+    width: 40px;
+    margin-right: 10px;
+  }
 }
 .btn-book-appointment{
   background: black;
@@ -23,3 +30,8 @@
   width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.mat-form-field {
+  width: 100%;
+  margin-bottom: -27px;
+}
+
