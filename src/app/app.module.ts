@@ -6,7 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     AppRoutingModule,
     MatInputModule,
     MatDialogModule,
+    BrowserAnimationsModule
   ],
   entryComponents:[
     DialogExampleComponent
