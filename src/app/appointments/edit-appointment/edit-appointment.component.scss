@@ -1,10 +1,15 @@
+
 .main {
+  width: 900px;
+  margin: 10px auto;
+  background-color: rgb(241, 235, 235);
+
   div {
     height: 50px;
     border-bottom: 1px solid rgb(226, 221, 221);
     display: flex;
     align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
     color: rgb(94, 93, 93);
     margin-left: 20px;
   }
@@ -13,12 +18,13 @@
     margin-right: 10px;
   }
 }
-.btn-book-appointment {
+.btn-book-appointment, button{
   background: black;
   color: rgb(226, 221, 221);
   height: 40px;
-  width: 100%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 900px;
+  margin: auto;
+
 }
 .mat-form-field {
   width: 100%;
