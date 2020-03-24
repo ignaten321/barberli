@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
+import { Service } from 'src/app/services/service';
+import { ServiceHelpersService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-select-service-dialog',
@@ -8,10 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class SelectServiceDialogComponent implements OnInit {
 
   constructor(
-    
+    @Inject(MAT_DIALOG_DATA) public data: { services: Service[] }
   ) { }
 
   ngOnInit() {
   }
 
+  checkService(service: Service): string {
+    return;
+  }
 }
