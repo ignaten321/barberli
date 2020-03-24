@@ -1,34 +1,36 @@
-<div class="main">
-  <div (click)="onOpenBarberDialog()">
-    <img src="https://cdn.onlinewebfonts.com/svg/img_488917.png" alt="">
-    {{ barberFullName }}
-  </div>
-  <div (click)="onOpenServiceDialog()">
-    <img src="https://svgsilh.com/svg_v2/1297454.svg" alt="">
-    Service
-  </div>
-  <div>
-    <img src="https://cdn1.iconfinder.com/data/icons/christmas-1-18/48/4-512.png" alt="">
-    Date
-  </div>
-  <div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Simple_icon_time.svg/1200px-Simple_icon_time.svg.png" alt="">
-    Time
-  </div>
-  <div>
-    <mat-form-field class="example-full-width">
-      <mat-label>Name</mat-label>
-      <input matInput >
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field class="example-full-width">
-      <mat-label>Phone</mat-label>
-      <input class="nan" matInput >
-    </mat-form-field>
-  </div>
-</div>
 
-<div>
-  <button  class="btn-book-appointment" (click)="onSubmit()">BOOK APPOINTMENT</button>
-</div>
+  <div class="main">
+    <div (click)="onOpenBarberDialog()">
+      <img src="https://cdn.onlinewebfonts.com/svg/img_488917.png" alt="">
+      {{ barberFullName }}
+    </div>
+    <div (click)="onOpenServiceDialog()">
+      <img src="https://svgsilh.com/svg_v2/1297454.svg" alt="">
+      Service
+    </div>
+    <div>
+      <img src="https://cdn1.iconfinder.com/data/icons/christmas-1-18/48/4-512.png" alt="">
+      Date
+    </div>
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Simple_icon_time.svg/1200px-Simple_icon_time.svg.png" alt="">
+      Time
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone</mat-label>
+        <input class="nan" matInput >
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="btn-book-appointment">
+    <button   (click)="onSubmit()">BOOK APPOINTMENT</button>
+  </div>
+
