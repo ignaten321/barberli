@@ -7,11 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SelectDialogComponent } from './ui/select-dialog/select-dialog.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogExampleComponent
+    DialogExampleComponent,
+    SelectDialogComponent,
+
   ],
   imports: [
     BrowserModule,

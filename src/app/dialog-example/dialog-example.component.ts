@@ -10,7 +10,7 @@ import { DialogData } from '../app.component';
 export class DialogExampleComponent implements OnInit {
 
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+  // constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
   ngOnInit() {
   }
