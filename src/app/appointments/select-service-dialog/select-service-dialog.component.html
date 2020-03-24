@@ -1,8 +1,12 @@
-<h1 mat-dialog-title>Sarvice</h1>
+<div class="main-div" >
 
-<div mat-dialog-content>
-  <div *ngFor="let service of data.services"
-       [mat-dialog-close]="service">
-      {{ checkService(service) }}
+  <div class="top-title"><p>Service</p></div>
+
+  <div>
+    <div *ngFor="let service of data.services"
+        [mat-dialog-close]="service">
+        {{ checkService(service) }}
+    </div>
   </div>
 </div>
+

@@ -9,8 +9,8 @@ import { Service } from '../services/service';
 export class AppointmentsService {
 
   barbers: Barber[] = [
-    { id: 1, role: 'test', firstName: 'Sam', lastName: 'lastName'},
-    { id: 2, role: 'test1', firstName: 'Ban', lastName: 'lastName'},
+    { id: 1, role: 'Senior Barber', firstName: 'Adam', lastName: 'Cooper', photoUrl: "https://barberly.blob.core.windows.net/house13/47cfec4358.jpeg"},
+    { id: 2, role: 'Barber', firstName: 'Alexander', lastName: 'Gillings', photoUrl: "https://barberly.blob.core.windows.net/house13/2b4cb26e0f.jpeg"},
   ];
   services: Service[] =[
     {serviceName: "Beard Trim", cost: 30, time: 30},

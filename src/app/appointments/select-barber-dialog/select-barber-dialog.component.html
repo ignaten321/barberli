@@ -1,8 +1,19 @@
-<h1 mat-dialog-title>Barbers</h1>
+<div class="main-div" >
 
-<div mat-dialog-content>
-    <div *ngFor="let barber of data.barbers"
-         [mat-dialog-close]="barber">
-        {{ getBarberFullName(barber) }}
-    </div>
+  <div class="top-title"><p>Barbers</p></div>
+
+  <div class="barber-mapping" >
+      <div *ngFor="let barber of data.barbers" [mat-dialog-close]="barber">
+        <ul>
+          <li>
+             <div>
+              <img [src]="barber.photoUrl" alt="">
+                <span class="role">{{barber.role}}</span> <br>
+                {{getBarberFullName(barber)}}
+            </div>
+          </li>
+        </ul>
+      </div>
+  </div>
 </div>
+
