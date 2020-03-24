@@ -1,14 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { DialogExampleComponent } from 'src/app/dialog-example/dialog-example.component';
-import { MatDialog } from '@angular/material/dialog';
-import { BarberComponent } from 'src/app/barber/barber.component';
+import { Component } from '@angular/core';
+import { MatDialog } from "@angular/material";
+import { BarberComponent } from './barber/barber.component';
 
-
-
-
-export interface DialogData {
-  animals: 'panda' | 'unicorn' | 'lion';
-}
 
 
 
@@ -20,15 +13,10 @@ export interface DialogData {
 })
 export class SelectDialogComponent{
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog){}
 
-  openDialog2() {
-    this.dialog.open(BarberComponent, {
-      data: {
-        animals: 'panda'
-      }
-    });
+  openBarber(){
+    this.dialog.open(BarberComponent);
   }
-
 
 }

@@ -1,11 +1,5 @@
 import { Component} from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 
-
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
 
 
 
@@ -17,15 +11,8 @@ export interface DialogData {
 })
 export class AppComponent {
 
-  constructor(public dialog: MatDialog) {}
 
-  openDialog() {
-    this.dialog.open(DialogExampleComponent, {
-      data: {
-        animal: 'panda'
-      }
-    });
-  }
+
 
 
 }

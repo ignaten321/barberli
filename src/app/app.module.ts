@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectDialogComponent } from './ui/select-dialog/select-dialog.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { SelectDialogComponent } from './ui/select-dialog/select-dialog.componen
     BrowserAnimationsModule
   ],
   entryComponents:[
-    DialogExampleComponent
+    DialogExampleComponent,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
