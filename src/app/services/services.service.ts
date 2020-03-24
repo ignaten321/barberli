@@ -9,5 +9,6 @@ export class ServiceHelpersService{
     if (!service) {
       return '';
     }
+    return service.serviceName;
   }
 }

@@ -18,6 +18,6 @@ export class SelectServiceDialogComponent implements OnInit {
   }
 
   checkService(service: Service): string {
-    return;
+    return ServiceHelpersService.checkService(service);
   }
 }

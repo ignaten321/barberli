@@ -3,6 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Barber } from 'src/app/barbers/barber';
 import { BarberHelpersService } from 'src/app/barbers/barbers.service';
 import { Service } from 'src/app/services/service';
+import { ServiceHelpersService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-edit-appointment',
@@ -33,6 +34,9 @@ export class EditAppointmentComponent implements OnInit {
 
   get barberFullName(): string {
     return BarberHelpersService.getBarberFullName(this.barber);
+  }
+  get serviceName(): string {
+    return ServiceHelpersService.checkService(this.service);
   }
 
   constructor(

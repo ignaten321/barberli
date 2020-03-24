@@ -16,7 +16,7 @@ export class SelectBarberDialogComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   getBarberFullName(barber: Barber): string {
     return BarberHelpersService.getBarberFullName(barber);
   }

@@ -3,6 +3,6 @@
 <div mat-dialog-content>
   <div *ngFor="let service of data.services"
        [mat-dialog-close]="service">
-      {{ service.serviceName }}
+      {{ checkService(service) }}
   </div>
 </div>
