@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectDialogComponent } from './ui/select-dialog/select-dialog.component';
+import { BarberComponent } from './ui/select-dialog/barber/barber.component';
 
 
 
@@ -16,7 +17,7 @@ import { SelectDialogComponent } from './ui/select-dialog/select-dialog.componen
     AppComponent,
     DialogExampleComponent,
     SelectDialogComponent,
-
+    BarberComponent
   ],
   imports: [
     BrowserModule,
@@ -26,8 +27,7 @@ import { SelectDialogComponent } from './ui/select-dialog/select-dialog.componen
     BrowserAnimationsModule
   ],
   entryComponents:[
-    DialogExampleComponent,
-
+    BarberComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
