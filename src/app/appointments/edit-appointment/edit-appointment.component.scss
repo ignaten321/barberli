@@ -1,16 +1,15 @@
 
 .main {
-  width: 900px;
+  width: 877px;
   margin: 10px auto;
   background-color: rgb(241, 235, 235);
-
+  padding: 0 20px 20px 0;
   div {
     height: 50px;
     border-bottom: 1px solid rgb(226, 221, 221);
     display: flex;
     align-items: center;
-
-    color: rgb(94, 93, 93);
+    color: rgb(17, 17, 17);
     margin-left: 20px;
   }
   img {
@@ -24,7 +23,7 @@
   height: 40px;
   width: 900px;
   margin: auto;
-
+  border: none;
 }
 .mat-form-field {
   width: 100%;

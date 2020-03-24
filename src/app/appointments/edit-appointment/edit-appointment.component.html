@@ -1,8 +1,8 @@
-
   <div class="main">
     <div (click)="onOpenBarberDialog()">
       <img src="https://cdn.onlinewebfonts.com/svg/img_488917.png" alt="">
       {{ barberFullName }}
+      <p *ngIf="!barberFullName">Barber</p>
     </div>
     <div (click)="onOpenServiceDialog()">
       <img src="https://svgsilh.com/svg_v2/1297454.svg" alt="">
