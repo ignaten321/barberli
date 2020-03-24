@@ -1,0 +1,262 @@
+diff --git a/src/app/app-routing.module.ts b/src/app/app-routing.module.ts
+index 06c7342..1e87188 100644
+--- a/src/app/app-routing.module.ts
++++ b/src/app/app-routing.module.ts
+@@ -1,8 +1,11 @@
++import { AppointmentsComponent } from './appointments/appointments.component';
+ import { NgModule } from '@angular/core';
+ import { Routes, RouterModule } from '@angular/router';
+
+-
+-const routes: Routes = [];
++const routes: Routes = [
++  { path: 'appointments/create-appointment', component: AppointmentsComponent },
++  { path: '**', redirectTo: 'appointments/create-appointment'}
++];
+
+ @NgModule({
+   imports: [RouterModule.forRoot(routes)],
+diff --git a/src/app/app.component.html b/src/app/app.component.html
+index 9f3c815..0680b43 100644
+--- a/src/app/app.component.html
++++ b/src/app/app.component.html
+@@ -1,38 +1 @@
+-<div class="appointment"><p>Appointment</p></div>
+-
+-<div class="main">
+-  <div>
+-    <img src="https://cdn.onlinewebfonts.com/svg/img_488917.png" alt="">
+-    <app-select-dialog></app-select-dialog>
+-  </div>
+-  <div>
+-    <img src="https://svgsilh.com/svg_v2/1297454.svg" alt="">
+-    Service
+-  </div>
+-  <div>
+-    <img src="https://cdn1.iconfinder.com/data/icons/christmas-1-18/48/4-512.png" alt="">
+-    Date
+-  </div>
+-  <div>
+-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Simple_icon_time.svg/1200px-Simple_icon_time.svg.png" alt="">
+-    Time
+-  </div>
+-  <div>
+-    <mat-form-field class="example-full-width">
+-      <mat-label>Name</mat-label>
+-      <input matInput >
+-    </mat-form-field>
+-  </div>
+-  <div>
+-    <mat-form-field class="example-full-width">
+-      <mat-label>Phone</mat-label>
+-      <input class="nan" matInput >
+-    </mat-form-field>
+-  </div>
+-</div>
+-
+-<div>
+-  <button  class="btn-book-appointment">BOOK APPOINTMENT</button>
+-</div>
+-
+-
++<router-outlet></router-outlet>
+diff --git a/src/app/app.component.scss b/src/app/app.component.scss
+index 87d3639..e69de29 100644
+--- a/src/app/app.component.scss
++++ b/src/app/app.component.scss
+@@ -1,37 +0,0 @@
+-
+-.appointment{
+-  border: 1px solid black;
+-  height: 50px;
+-  margin: -8px -8px 0 -8px;
+-  background: black;
+-  color:rgb(226, 221, 221);
+-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+-  padding-left: 20px;
+-}
+-.main {
+-  div{
+-    height: 50px;
+-    border-bottom: 1px solid rgb(226, 221, 221);
+-    display: flex;
+-    align-items: center;
+-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+-    color:rgb(94, 93, 93);
+-    margin-left: 20px;
+-  }
+-  img{
+-    width: 40px;
+-    margin-right: 10px;
+-  }
+-}
+-.btn-book-appointment{
+-  background: black;
+-  color: rgb(226, 221, 221);
+-  height: 40px;
+-  width: 100%;
+-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+-}
+-.mat-form-field {
+-  width: 100%;
+-  margin-bottom: -27px;
+-}
+-
+diff --git a/src/app/app.module.ts b/src/app/app.module.ts
+index da05160..6609287 100644
+--- a/src/app/app.module.ts
++++ b/src/app/app.module.ts
+@@ -1,35 +1,24 @@
++import { AppointmentsModule } from './appointments/appointments.module';
+ import { BrowserModule } from '@angular/platform-browser';
+ import { NgModule } from '@angular/core';
+-import { MatInputModule } from '@angular/material/input';
+-import { MatDialogModule } from '@angular/material/dialog';
+
+ import { AppRoutingModule } from './app-routing.module';
+ import { AppComponent } from './app.component';
+-import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+-import { SelectDialogComponent } from './ui/select-dialog/select-dialog.component';
+-import { BarberComponent } from './ui/select-dialog/barber/barber.component';
+-
+-
+
+ @NgModule({
+   declarations: [
+     AppComponent,
+-    DialogExampleComponent,
+-    SelectDialogComponent,
+-    BarberComponent
+   ],
+   imports: [
+     BrowserModule,
++    BrowserAnimationsModule,
+     AppRoutingModule,
+-    MatInputModule,
+-    MatDialogModule,
+-    BrowserAnimationsModule
+-  ],
+-  entryComponents:[
+-    BarberComponent
++
++    AppointmentsModule,
+   ],
+   providers: [],
+   bootstrap: [AppComponent]
+ })
+ export class AppModule { }
++
+\ No newline at end of file
+diff --git a/src/app/dialog-example/dialog-example.component.html b/src/app/dialog-example/dialog-example.component.html
+deleted file mode 100644
+index 798033b..0000000
+--- a/src/app/dialog-example/dialog-example.component.html
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<h1 mat-dialog-title>Favorite Animal</h1>
+-<div mat-dialog-content>
+-  My favorite animal is:
+-
+-</div>
+diff --git a/src/app/dialog-example/dialog-example.component.scss b/src/app/dialog-example/dialog-example.component.scss
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/src/app/dialog-example/dialog-example.component.ts b/src/app/dialog-example/dialog-example.component.ts
+deleted file mode 100644
+index 278397a..0000000
+--- a/src/app/dialog-example/dialog-example.component.ts
++++ /dev/null
+@@ -1,19 +0,0 @@
+-import { Component, OnInit, Inject} from '@angular/core';
+-
+-@Component({
+-  selector: 'app-dialog-example',
+-  templateUrl: './dialog-example.component.html',
+-  styleUrls: ['./dialog-example.component.scss']
+-})
+-export class DialogExampleComponent implements OnInit {
+-
+-
+-
+-
+-  ngOnInit() {
+-  }
+-
+-
+-
+-
+-}
+diff --git a/src/app/ui/select-dialog/barber/barber.component.css b/src/app/ui/select-dialog/barber/barber.component.css
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/src/app/ui/select-dialog/barber/barber.component.html b/src/app/ui/select-dialog/barber/barber.component.html
+deleted file mode 100644
+index 9e8343c..0000000
+--- a/src/app/ui/select-dialog/barber/barber.component.html
++++ /dev/null
+@@ -1,4 +0,0 @@
+-
+-sdfdfsgdsfgsdf
+-
+-sdfgdfgd
+diff --git a/src/app/ui/select-dialog/barber/barber.component.ts b/src/app/ui/select-dialog/barber/barber.component.ts
+deleted file mode 100644
+index 30c1eba..0000000
+--- a/src/app/ui/select-dialog/barber/barber.component.ts
++++ /dev/null
+@@ -1,16 +0,0 @@
+-import { Component } from '@angular/core';
+-
+-
+-@Component({
+-  selector: 'app-barber',
+-  templateUrl: './barber.component.html',
+-  styleUrls: ['./barber.component.css']
+-})
+-
+-export class BarberComponent {
+-
+-
+-
+-
+-
+-}
+diff --git a/src/app/ui/select-dialog/select-dialog.component.html b/src/app/ui/select-dialog/select-dialog.component.html
+deleted file mode 100644
+index a588087..0000000
+--- a/src/app/ui/select-dialog/select-dialog.component.html
++++ /dev/null
+@@ -1 +0,0 @@
+-<button mat-raised-button (click)="openBarber()">Barber</button>
+diff --git a/src/app/ui/select-dialog/select-dialog.component.scss b/src/app/ui/select-dialog/select-dialog.component.scss
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/src/app/ui/select-dialog/select-dialog.component.ts b/src/app/ui/select-dialog/select-dialog.component.ts
+deleted file mode 100644
+index a556cd6..0000000
+--- a/src/app/ui/select-dialog/select-dialog.component.ts
++++ /dev/null
+@@ -1,22 +0,0 @@
+-import { Component } from '@angular/core';
+-import { MatDialog } from "@angular/material";
+-import { BarberComponent } from './barber/barber.component';
+-
+-
+-
+-
+-
+-@Component({
+-  selector: 'app-select-dialog',
+-  templateUrl: './select-dialog.component.html',
+-  styleUrls: ['./select-dialog.component.scss']
+-})
+-export class SelectDialogComponent{
+-
+-  constructor(public dialog: MatDialog){}
+-
+-  openBarber(){
+-    this.dialog.open(BarberComponent);
+-  }
+-
+-}

@@ -1,0 +1,9 @@
+<header>
+    <p>Appointment</p>
+</header>
+
+<app-edit-appointment
+    [appointment]="appointment"
+    (openBarberDialog)="onOpenBarberDialog($event)"
+    (submitAppointment)="onSubmitAppointment($event)"
+></app-edit-appointment>

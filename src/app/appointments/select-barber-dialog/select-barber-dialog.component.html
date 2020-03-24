@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Barbers</h1>
+
+<div mat-dialog-content>
+    <div *ngFor="let barber of data.barbers"
+         [mat-dialog-close]="barber">
+        {{ getBarberFullName(barber) }}
+    </div>
+</div>
