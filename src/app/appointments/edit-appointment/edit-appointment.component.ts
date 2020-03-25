@@ -4,6 +4,8 @@ import { Barber } from 'src/app/barbers/barber';
 import { BarberHelpersService } from 'src/app/barbers/barbers.service';
 import { Service } from 'src/app/services/service';
 import { ServiceHelpersService } from 'src/app/services/services.service';
+import { TimeHelpersService } from 'src/app/times/times.service';
+import { Time } from 'src/app/times/time';
 
 @Component({
   selector: 'app-edit-appointment',
@@ -16,6 +18,7 @@ export class EditAppointmentComponent implements OnInit {
 
   @Output() openBarberDialog = new EventEmitter<null>();
   @Output() openServiceDialog = new EventEmitter<null>();
+  @Output() openTimeDialog = new EventEmitter<null>();
 
   @Output() submitAppointment = new EventEmitter<Appointment>();
 
@@ -31,12 +34,21 @@ export class EditAppointmentComponent implements OnInit {
     }
     return this.appointment.service;
   }
+  get time(): Time{
+    if (!this.appointment) {
+      return;
+    }
+    return this.appointment.time;
+  }
 
   get barberFullName(): string {
     return BarberHelpersService.getBarberFullName(this.barber);
   }
   get serviceName(): string {
     return ServiceHelpersService.checkService(this.service);
+  }
+  get timeValue(): string{
+    return TimeHelpersService.getTime(this.time)
   }
 
   constructor(
@@ -50,6 +62,9 @@ export class EditAppointmentComponent implements OnInit {
   }
   onOpenServiceDialog() {
     this.openServiceDialog.emit();
+  }
+  onOpenTimeDialog(){
+    this.openTimeDialog.emit();
   }
 
   onSubmit() {

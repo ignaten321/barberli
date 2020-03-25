@@ -6,6 +6,8 @@ import { SelectBarberDialogComponent } from './select-barber-dialog/select-barbe
 import { Appointment } from './appointment';
 import { SelectServiceDialogComponent } from './select-service-dialog/select-service-dialog.component';
 import { Service } from '../services/service';
+import { SelectTimeDialogComponent } from './select-time-dialog/select-time-dialog.component';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'app-appointments',
@@ -46,6 +48,17 @@ export class AppointmentsComponent implements OnInit {
     });
     dialogSer.afterClosed().subscribe((service: Service) => {
       this.appointmentsService.selectService(service);
+    });
+  }
+
+  onOpenTimeDialog(){
+    const dialogVel = this.dialog.open(SelectTimeDialogComponent, {
+      data: {
+        times: this.appointmentsService.times
+      }
+    });
+    dialogVel.afterClosed().subscribe((time: Time) => {
+      this.appointmentsService.selectTime(time);
     });
   }
 
