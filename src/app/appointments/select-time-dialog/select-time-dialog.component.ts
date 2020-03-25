@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { TimeHelpersService } from 'src/app/times/times.service';
-import { Time } from 'src/app/times/time';
+import { TimeType } from 'src/app/times/time';
 
 @Component({
   selector: 'app-select-time-dialog',
@@ -11,14 +11,14 @@ import { Time } from 'src/app/times/time';
 export class SelectTimeDialogComponent implements OnInit {
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: { times: Time[] }
+    @Inject(MAT_DIALOG_DATA) public data: { times: TimeType[] }
   ) { }
 
   ngOnInit() {
   }
 
-  getTime(time: Time): string {
-    return TimeHelpersService.getTime(time);
+  getTime(timeType: TimeType): string {
+    return TimeHelpersService.getTime(timeType);
   }
 
 }

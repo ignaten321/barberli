@@ -1,3 +1,3 @@
-export class Time {
+export class TimeType {
   timeVelue: string;
 }

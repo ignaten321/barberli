@@ -7,8 +7,8 @@ import { Appointment } from './appointment';
 import { SelectServiceDialogComponent } from './select-service-dialog/select-service-dialog.component';
 import { Service } from '../services/service';
 import { SelectTimeDialogComponent } from './select-time-dialog/select-time-dialog.component';
-import { Time } from '@angular/common';
-import { SelectDateDialogComponent } from './select-date-dialog/select-date-dialog.component';
+import { TimeType } from '../times/time';
+
 
 @Component({
   selector: 'app-appointments',
@@ -52,18 +52,14 @@ export class AppointmentsComponent implements OnInit {
     });
   }
 
-  onOpenDateDialog(){
-
-  }
-
   onOpenTimeDialog(){
     const dialogVel = this.dialog.open(SelectTimeDialogComponent, {
       data: {
         times: this.appointmentsService.times
       }
     });
-    dialogVel.afterClosed().subscribe((time: Time) => {
-      this.appointmentsService.selectTime(time);
+    dialogVel.afterClosed().subscribe((timeType: TimeType) => {
+      this.appointmentsService.selectTime(timeType);
     });
   }
 

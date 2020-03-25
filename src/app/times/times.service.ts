@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
-import { Time } from '@angular/common';
+import { TimeType } from './time';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TimeHelpersService{
-  static getTime(time: Time): string{
-    if(!time){
+  static getTime(timeType: TimeType): string{
+    if(!timeType){
       return "";
     }
     return
