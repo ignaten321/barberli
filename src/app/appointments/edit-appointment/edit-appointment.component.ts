@@ -4,7 +4,6 @@ import { Barber } from 'src/app/barbers/barber';
 import { BarberHelpersService } from 'src/app/barbers/barbers.service';
 import { Service } from 'src/app/services/service';
 import { ServiceHelpersService } from 'src/app/services/services.service';
-import { TimeHelpersService } from 'src/app/times/times.service';
 import { TimeType } from 'src/app/times/time';
 
 @Component({
@@ -36,11 +35,11 @@ export class EditAppointmentComponent implements OnInit {
     }
     return this.appointment.service;
   }
-  get timeType(): TimeType{
-    if (!this.appointment) {
+  get timeName(): string{
+    if (!this.appointment || !this.appointment.timeType) {
       return;
     }
-    return this.appointment.timeType;
+    return this.appointment.timeType.timeVelue;
   }
 
   get barberFullName(): string {
@@ -48,9 +47,6 @@ export class EditAppointmentComponent implements OnInit {
   }
   get serviceName(): string {
     return ServiceHelpersService.checkService(this.service);
-  }
-  get timeName(): string{
-    return TimeHelpersService.getTime(this.timeType)
   }
 
   constructor(
