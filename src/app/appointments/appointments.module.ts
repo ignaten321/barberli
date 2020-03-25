@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EditAppointmentComponent } from './edit-appointment/edit-appointment.component';
-import { MatInputModule, MatDialogModule, MatChipsModule } from '@angular/material';
+import { MatInputModule, MatDialogModule, MatChipsModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { AppointmentsComponent } from './appointments.component';
 import { SelectBarberDialogComponent } from './select-barber-dialog/select-barber-dialog.component';
 import { SelectServiceDialogComponent } from './select-service-dialog/select-service-dialog.component';
@@ -21,7 +21,9 @@ import { SelectDateDialogComponent } from './select-date-dialog/select-date-dial
     CommonModule,
     MatInputModule,
     MatDialogModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   entryComponents: [
     SelectBarberDialogComponent,
