@@ -1,1 +1,15 @@
-<p>select-time-dialog works!</p>
+<div class="main-div" >
+
+  <div class="top-title"><p>Time</p></div>
+
+  <div class="barber-mapping" >
+      <div *ngFor="let timeSelect of data.times | slice:0:4" [mat-dialog-close]="timeSelect">
+            <mat-chip-list  aria-label="Fish selection" ariaOrientation="horizontal">
+              <mat-chip >{{timeSelect.timeVelue}}</mat-chip>
+              <mat-chip >{{timeSelect.timeVelue}}</mat-chip>
+            </mat-chip-list>
+
+      </div>
+  </div>
+</div>
+

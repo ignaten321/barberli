@@ -9,7 +9,7 @@
       {{ serviceName }}
       <p *ngIf="!serviceName">Service</p>
     </div>
-    <div>
+    <div (click)="onOpenDateDialog()">
       <img src="https://cdn1.iconfinder.com/data/icons/christmas-1-18/48/4-512.png" alt="">
       Date
     </div>

@@ -6,6 +6,7 @@ import { AppointmentsComponent } from './appointments.component';
 import { SelectBarberDialogComponent } from './select-barber-dialog/select-barber-dialog.component';
 import { SelectServiceDialogComponent } from './select-service-dialog/select-service-dialog.component';
 import { SelectTimeDialogComponent } from './select-time-dialog/select-time-dialog.component';
+import { SelectDateDialogComponent } from './select-date-dialog/select-date-dialog.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SelectTimeDialogComponent } from './select-time-dialog/select-time-dial
     AppointmentsComponent,
     SelectBarberDialogComponent,
     SelectServiceDialogComponent,
-    SelectTimeDialogComponent
+    SelectTimeDialogComponent,
+    SelectDateDialogComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { SelectTimeDialogComponent } from './select-time-dialog/select-time-dial
   entryComponents: [
     SelectBarberDialogComponent,
     SelectServiceDialogComponent,
-    SelectTimeDialogComponent
+    SelectTimeDialogComponent,
+    SelectDateDialogComponent
   ],
 })
 export class AppointmentsModule { }

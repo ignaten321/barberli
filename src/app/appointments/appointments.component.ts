@@ -8,6 +8,7 @@ import { SelectServiceDialogComponent } from './select-service-dialog/select-ser
 import { Service } from '../services/service';
 import { SelectTimeDialogComponent } from './select-time-dialog/select-time-dialog.component';
 import { Time } from '@angular/common';
+import { SelectDateDialogComponent } from './select-date-dialog/select-date-dialog.component';
 
 @Component({
   selector: 'app-appointments',
@@ -22,7 +23,7 @@ export class AppointmentsComponent implements OnInit {
 
   constructor(
     public appointmentsService: AppointmentsService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit() {
@@ -49,6 +50,10 @@ export class AppointmentsComponent implements OnInit {
     dialogSer.afterClosed().subscribe((service: Service) => {
       this.appointmentsService.selectService(service);
     });
+  }
+
+  onOpenDateDialog(){
+
   }
 
   onOpenTimeDialog(){

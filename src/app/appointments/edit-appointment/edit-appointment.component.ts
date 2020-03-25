@@ -18,7 +18,9 @@ export class EditAppointmentComponent implements OnInit {
 
   @Output() openBarberDialog = new EventEmitter<null>();
   @Output() openServiceDialog = new EventEmitter<null>();
+  @Output() openDateDialog = new EventEmitter<null>();
   @Output() openTimeDialog = new EventEmitter<null>();
+
 
   @Output() submitAppointment = new EventEmitter<Appointment>();
 
@@ -62,6 +64,9 @@ export class EditAppointmentComponent implements OnInit {
   }
   onOpenServiceDialog() {
     this.openServiceDialog.emit();
+  }
+  onOpenDateDialog(){
+    this.openDateDialog.emit();
   }
   onOpenTimeDialog(){
     this.openTimeDialog.emit();
