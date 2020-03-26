@@ -4,7 +4,7 @@ import { Barber } from 'src/app/barbers/barber';
 import { BarberHelpersService } from 'src/app/barbers/barbers.service';
 import { Service } from 'src/app/services/service';
 import { ServiceHelpersService } from 'src/app/services/services.service';
-import { TimeType } from 'src/app/times/time';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-appointment',
@@ -22,6 +22,10 @@ export class EditAppointmentComponent implements OnInit {
 
 
   @Output() submitAppointment = new EventEmitter<Appointment>();
+
+  // Создание формы
+  form: FormGroup
+
 
   get barber(): Barber {
     if (!this.appointment) {
@@ -52,8 +56,25 @@ export class EditAppointmentComponent implements OnInit {
   constructor(
   ) { }
 
+
+  //инициализация формы
   ngOnInit() {
+    this.form = new FormGroup({
+      name: new FormControl(""),
+      phone: new FormControl(""),
+    })
   }
+  submitForm(){
+    const formDate = {...this.form.value}
+    const fullName = this.appointment.barber.firstName + " " + this.appointment.barber.lastName
+
+    console.log("Your Barber:", fullName)
+    console.log("Your Service:", this.appointment.service.serviceName)
+    console.log("Your Time:", this.appointment.timeType.timeVelue)
+    console.log("Your Name:", formDate.name)
+    console.log("Your Phone:", formDate.phone)
+  }
+
 
   onOpenBarberDialog() {
     this.openBarberDialog.emit();
@@ -68,5 +89,10 @@ export class EditAppointmentComponent implements OnInit {
   onSubmit() {
     this.submitAppointment.emit(this.appointment);
   }
+
+
+
+
+
 
 }

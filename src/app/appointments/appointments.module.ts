@@ -7,6 +7,7 @@ import { SelectBarberDialogComponent } from './select-barber-dialog/select-barbe
 import { SelectServiceDialogComponent } from './select-service-dialog/select-service-dialog.component';
 import { SelectTimeDialogComponent } from './select-time-dialog/select-time-dialog.component';
 import { SelectDateDialogComponent } from './select-date-dialog/select-date-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SelectDateDialogComponent } from './select-date-dialog/select-date-dial
     MatDialogModule,
     MatChipsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     SelectBarberDialogComponent,

@@ -1,3 +1,5 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+
   <div class="main">
     <div (click)="onOpenBarberDialog()">
       <img src="https://cdn.onlinewebfonts.com/svg/img_488917.png" alt="">
@@ -12,9 +14,9 @@
     <div (click)="picker.open()">
       <img src="https://cdn1.iconfinder.com/data/icons/christmas-1-18/48/4-512.png" alt="">
 
-        <input matInput [matDatepicker]="picker" placeholder="Date">
+        <input matInput [matDatepicker]="picker" placeholder="Date" matInput >
         <mat-datepicker touchUi #picker></mat-datepicker>
-  
+
     </div>
     <div (click)="onOpenTimeDialog()">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Simple_icon_time.svg/1200px-Simple_icon_time.svg.png" alt="">
@@ -24,18 +26,19 @@
     <div>
       <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
-        <input matInput >
+        <input matInput formControlName="name">
       </mat-form-field>
     </div>
     <div>
       <mat-form-field class="example-full-width">
         <mat-label>Phone</mat-label>
-        <input class="nan" matInput >
+        <input class="nan" matInput formControlName="phone">
       </mat-form-field>
     </div>
   </div>
 
   <div class="btn-book-appointment">
-    <button   (click)="onSubmit()">BOOK APPOINTMENT</button>
+    <button   (click)="onSubmit()" type="submit">BOOK APPOINTMENT</button>
   </div>
 
+</form>

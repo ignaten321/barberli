@@ -57,7 +57,7 @@ export class AppointmentsService {
   }
 
   submitAppointment() {
-    console.log(this.selectedAppointment);
+
   }
 
 }
