@@ -56,8 +56,8 @@ export class AppointmentsService {
     this.selectedAppointment.timeType = timeType;
   }
 
-  submitAppointment() {
-
+  submitAppointment(appointment: Appointment) {
+    console.log(appointment);
   }
 
 }

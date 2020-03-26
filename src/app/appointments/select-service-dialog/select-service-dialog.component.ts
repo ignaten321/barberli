@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { Service } from 'src/app/services/service';
-import { ServiceHelpersService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-select-service-dialog',
@@ -17,7 +16,4 @@ export class SelectServiceDialogComponent implements OnInit {
   ngOnInit() {
   }
 
-  checkService(service: Service): string {
-    return ServiceHelpersService.checkService(service);
-  }
 }

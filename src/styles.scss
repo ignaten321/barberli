@@ -1,11 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body{
-  margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-image: url("https://i.pinimg.com/originals/1a/12/55/1a1255e4c4a6872808aaa16e45d8b4a1.jpg");
-  background-size: auto;
-  background-color: white;
+html,
+body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.banner {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("https://i.pinimg.com/originals/1a/12/55/1a1255e4c4a6872808aaa16e45d8b4a1.jpg");
+
+  /* Set a specific height */
+  height: 100%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }

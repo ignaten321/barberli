@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="submitForm()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
 
   <div class="main">
     <div (click)="onOpenBarberDialog()">
@@ -14,7 +14,7 @@
     <div (click)="picker.open()">
       <img src="https://cdn1.iconfinder.com/data/icons/christmas-1-18/48/4-512.png" alt="">
 
-        <input matInput [matDatepicker]="picker" placeholder="Date" matInput >
+        <input formControlName="date" matInput [matDatepicker]="picker" placeholder="Date" matInput >
         <mat-datepicker touchUi #picker></mat-datepicker>
 
     </div>
@@ -38,7 +38,7 @@
   </div>
 
   <div class="btn-book-appointment">
-    <button   (click)="onSubmit()" type="submit">BOOK APPOINTMENT</button>
+    <button type="submit">BOOK APPOINTMENT</button>
   </div>
 
 </form>

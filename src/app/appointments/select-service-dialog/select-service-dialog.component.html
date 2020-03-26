@@ -1,19 +1,19 @@
-<div class="main-div" >
+<div class="main-div">
 
-  <div class="top-title"><p>Service</p></div>
+  <div class="top-title">
+    <p>Service</p>
+  </div>
 
-  <div class="service-mapping">
-    <div *ngFor="let service of data.services" [mat-dialog-close]="service">
-      <ul>
-        <li>
-          <div>
-            <img [src]="service.photoUrl" alt="">
-            {{service.serviceName}} <br>
-            <span class="time">time:{{service.time}} cost:{{service.cost}}</span>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="service-mapping"
+       *ngFor="let service of data.services"
+       [mat-dialog-close]="service">
+    <ul>
+      <li>
+        <img [src]="service.photoUrl"
+             alt="">
+        {{service.serviceName}} <br>
+        <span class="time">time:{{service.time}} cost:{{service.cost}}</span>
+      </li>
+    </ul>
   </div>
 </div>
-

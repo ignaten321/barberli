@@ -1,19 +1,19 @@
-<div class="main-div" >
+<div class="main-div">
 
-  <div class="top-title"><p>Barbers</p></div>
+  <div class="top-title">
+    <p>Barbers</p>
+  </div>
 
-  <div class="barber-mapping" >
-      <div *ngFor="let barber of data.barbers" [mat-dialog-close]="barber">
-        <ul>
-          <li>
-             <div>
-                <img [src]="barber.photoUrl" alt="">
-                <span class="role">{{barber.role}}</span> <br>
-                {{getBarberFullName(barber)}}
-            </div>
-          </li>
-        </ul>
-      </div>
+  <div class="barber-mapping"
+       *ngFor="let barber of data.barbers"
+       [mat-dialog-close]="barber">
+    <ul>
+      <li>
+        <img [src]="barber.photoUrl"
+             alt="">
+        <span class="role">{{barber.role}}</span> <br>
+        {{getBarberFullName(barber)}}
+      </li>
+    </ul>
   </div>
 </div>
-

@@ -63,7 +63,7 @@ export class AppointmentsComponent implements OnInit {
     });
   }
 
-  onSubmitAppointment() {
-    this.appointmentsService.submitAppointment();
+  onSubmitAppointment(appointment: Appointment) {
+    this.appointmentsService.submitAppointment(appointment);
   }
 }
